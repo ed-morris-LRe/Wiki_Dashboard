@@ -56,7 +56,7 @@ if upload_type == 'First/new upload':
                 - At the bottom of the sidebar, click Upload to SAGE
                 """)
 
-    st.image(Image.open('Actuarial_UI_Upload.jpg'))
+    st.image(Image.open('Actuarial_UI_Upload.JPG'))
     
     st.write("""
              - Under "Choose CSV File", click "Browse..." and click the YELT to upload
