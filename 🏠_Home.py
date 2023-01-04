@@ -19,7 +19,7 @@ import streamlit as st
 #os.chdir(rfp_path)
 
 # Images
-sage = Image.open('SAGE_logo.jpg')
+sage = Image.open('SAGE_logo.JPG')
 
 # Set page configuration
 st.set_page_config(page_title='Home',page_icon=sage,initial_sidebar_state='expanded')
