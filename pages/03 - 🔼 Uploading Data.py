@@ -19,10 +19,10 @@ import streamlit as st
 # Set page configuration
 st.set_page_config(page_title='Uploading Data',page_icon='🔼',initial_sidebar_state='expanded')
 
-api_converter = Image.open('API_converter.jpg')
-are_api = Image.open('ARe_API.jpg')
-padded_ec = Image.open('Padded_event_catalogue.jpg')
-aud = Image.open('AUD_upload.jpg')
+api_converter = Image.open('API_converter.JPG')
+are_api = Image.open('ARe_API.JPG')
+padded_ec = Image.open('Padded_event_catalogue.JPG')
+aud = Image.open('AUD_upload.JPG')
 
 
 r_script = open('test.txt','r')
