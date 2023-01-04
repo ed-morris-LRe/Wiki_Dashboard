@@ -24,11 +24,6 @@ are_api = Image.open('ARe_API.JPG')
 padded_ec = Image.open('Padded_event_catalogue.JPG')
 aud = Image.open('AUD_upload.JPG')
 
-
-r_script = open('test.txt','r')
-file = r_script.read()
-r_script.close()
-
 st.sidebar.success('Select a topic')
 
 st.title('Uploading Data to AnalyzeRe/SAGE')
