@@ -20,9 +20,9 @@ import streamlit as st
 st.set_page_config(page_title='Installation/Permissions Guide',page_icon='⚙️',initial_sidebar_state='expanded')
 
 # Read in images
-ghub_access = Image.open('GitHub_access.jpg')
-ghub_pat = Image.open('PAT_creation.jpg')
-r_environ_pic = Image.open('Renviron_ss.jpg')
+ghub_access = Image.open('GitHub_access.JPG')
+ghub_pat = Image.open('PAT_creation.JPG')
+r_environ_pic = Image.open('Renviron_ss.JPG')
 
 st.sidebar.success('Select a topic')
 
