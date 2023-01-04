@@ -20,7 +20,7 @@ import streamlit as st
 st.set_page_config(page_title='Upload Process Flowchart',page_icon='📈',initial_sidebar_state='expanded')
 
 # Open flowchart pic
-flow = Image.open('Upload_Flowchart.jpg')
+flow = Image.open('Upload_Flowchart.JPG')
 
 st.sidebar.success('Select a topic')
 
