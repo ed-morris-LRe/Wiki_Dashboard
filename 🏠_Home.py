@@ -18,8 +18,11 @@ import streamlit as st
 #rfp_path = r"C:\Users\ed.morris\Documents\Python Scripts\Streamlit SAGE"
 #os.chdir(rfp_path)
 
+# Images
+sage = Image.open('SAGE_logo.jpg')
+
 # Set page configuration
-st.set_page_config(page_title='Home',page_icon=Image.open('SAGE_logo.jpg'),initial_sidebar_state='expanded')
+st.set_page_config(page_title='Home',page_icon=sage,initial_sidebar_state='expanded')
 
 st.sidebar.success('Select a topic')
 
