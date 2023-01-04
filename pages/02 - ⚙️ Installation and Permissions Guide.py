@@ -10,11 +10,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from PIL import Image
 import streamlit as st
-import os
+#import os
 
 # set wd
-rfp_path = r"C:\Users\ed.morris\Documents\Python Scripts\Streamlit SAGE"
-os.chdir(rfp_path)
+#rfp_path = r"C:\Users\ed.morris\Documents\Python Scripts\Streamlit SAGE"
+#os.chdir(rfp_path)
 
 # Set page configuration
 st.set_page_config(page_title='Installation/Permissions Guide',page_icon='⚙️',initial_sidebar_state='expanded')
