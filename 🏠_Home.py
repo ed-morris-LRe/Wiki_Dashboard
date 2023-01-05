@@ -27,7 +27,7 @@ st.set_page_config(page_title='Home',page_icon=sage,initial_sidebar_state='expan
 st.sidebar.success('Select a topic')
 
 
-st.header("""
+st.title("""
           SAGE/Actuarial UI User Guide
           """)
           
