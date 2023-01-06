@@ -13,6 +13,8 @@ import streamlit as st
 # Set page configuration
 st.set_page_config(page_title='Setup Troubleshooting',page_icon='✋',initial_sidebar_state='expanded')
 
+txt_file = open('R_installation_notes.txt','r')
+
 st.title('Setup Troubleshooting Guide')
 st.markdown("""
             This page will contain some basic guidance and things to try when facing common issues upon setup.
