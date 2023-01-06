@@ -1,0 +1,87 @@
+
+
+R:        https://cran.r-project.org/bin/windows/base/R-3.6.3-win.exe
+RStudio:  https://rstudio.com/products/rstudio/download/#download
+Git:      https://github.com/git-for-windows/git/releases/download/v2.25.1.windows.1/Git-2.25.1-64-bit.exe
+RTools:   https://cran.r-project.org/bin/windows/Rtools/Rtools35.exe
+
+
+1.  Install R, RStudio, and Git.  Any installation path will do.
+
+2.  Install RTools.  The installation path must not contain spaces, so may as well accept the default.
+
+3.  Optional:  Edit RProfile, located under the R installation path at \library\base\R\Rprofile, if you want packages added later to be installed in the main R\library folder.  Comment out these lines (near line 110)
+
+      if(!nzchar(Sys.getenv("R_LIBS_USER")))
+          Sys.setenv(R_LIBS_USER=
+                     file.path(Sys.getenv("R_USER"), "R",
+                               "win-library",
+                               paste(R.version$major,
+                                     sub("\\..*$", "", R.version$minor),
+                                     sep=".")
+                               ))
+
+and add this:
+
+      Sys.setenv(R_LIBS_USER=file.path(chartr("\\", "/", R.home()), "library_site"))
+
+
+4.  Execute the following commands within RStudio to install packages not included with base R:
+
+      rm(list=ls())
+      x <- installed.packages()[,"Package"]
+      
+      if(is.na(x[x="sys"]))           {install.packages("sys")       }
+      if(is.na(x[x="fs"]))            {install.packages("fs")        }
+      if(is.na(x[x="tidyverse"]))     {install.packages("tidyverse") }
+      if(is.na(x[x="devtools"]))      {install.packages("devtools")  }
+      if(is.na(x[x="testthat"]))      {install.packages("testthat")  }
+      if(is.na(x[x="readxl"]))        {install.packages("readxl")    }
+      if(is.na(x[x="openxlsx"]))      {install.packages("openxlsx")  }
+      if(is.na(x[x="assertthat"]))    {install.packages("assertthat")}
+
+NOTE: when you install or update packages, you will sometimes confront a rather cryptic question asking whether you want to "install from source packages that need to be compiled" or something like that.  
+If you've followed something close to these notes, you will have installed Rtools, whose responsibilities include compiling packages from source code.  
+So answer yes, even if (like me) you find the question a bit baffling.
+
+5. To downlaod any private packages you need to authenticate yourself.  Follow instructions here:
+happygitwithr.com/github-pat.html
+usethis::edit_r_environ()
+GITHUB_PAT=<<enter token here>>
+
+5. Other packages you may want to consider:
+install.packages("odbc")
+
+install.packages(c("plotly", "plotlyGeoAssets", "flexdashboard"))
+## Requires Github PAT
+devtools::install_github("rstudio/rsconnect") 
+## Private for Lockton:
+devtools::install_github("Lockton-Companies/lorecat")
+remotes::install_github("problemofpoints/lorexposure")
+remotes::install_github("Lockton-Companies/lorecatshiny")
+remotes::install_github("Lockton-Companies/locktonr")
+remotes::install_github("Lockton-Companies/analyzere")
+
+## may also need
+install_miniconda(path = miniconda_path(), update = TRUE, force = FALSE)
+install_are()
+install.packages("fs")
+library(tidyverse)
+library(analyzere)
+library(openxlsx)
+library(locktonr)
+library(ggplot2)
+library(flextable)
+library(dplyr)
+import_lockton_fonts()
+gg_set_lockton_theme()
+
+6.Analyze Re credentials directions: 
+•	open R Studio.  
+o	Run the following line of code:
+	usethis::edit_r_environ()	
+o	A tab will open at the top left quadrant labeled .Renviron.  In that tab, type the following information with your data substituted in the tick marks for username and password, keeping the tickmarks.  Note mine already had the github pat as line 1, so I added this as lines 3-5
+ANALYZERE_URL='https://lockton-api.analyzere.net'
+ANALYZERE_USERNAME='Yourusername'
+ANALYZERE_PASSWORD='YourAnalyzeRePassword'
+
