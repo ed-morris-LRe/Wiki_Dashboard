@@ -52,3 +52,9 @@ st.markdown("""
             - Carry out checks to ensure there is no overlapping of eventids across lines of business/perils (usually in cat simulation code called EventCheck)
             """)
 
+st.header('R_insllation_notes.txt file')
+st.markdown("""
+            Some of you may be familiar with the R_installation_notes.txt file, whilst this is a tad outdated for the installation process with GitHub etc, it is useful for installing some initial packages. Please find a link to download this file below:
+            """)
+
+st.download_button('R Installation Notes', txt_file)
