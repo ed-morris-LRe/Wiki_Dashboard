@@ -119,6 +119,13 @@ if upload_type == 'Updating an existing upload':
                 """)
     st.image(api_converter,'Pasted output of "upload-to-are.R" script at the top, API code in red')
     
+    st.header('WARNING!')
+    st.markdown("""
+                When removing a loss set from SAGE, it is imperative that the loss set is unselected from all structures in the analysis profile, and is ungrouped from any groups and any shared limits. If you don't do this, the loss set will disappear as expected, but the premium, expense and losses will still feed into the portfolio level numbers. 
+                
+                If you notice phantom numbers in SAGE that line up with an old loss set, reinstate the loss set in the API using the "sink" we cut out above and deselect it appropriately in SAGE before trying to remove it again.
+                """)
+
     st.header('Analyze Re API')
     st.markdown("""
                 Once we have the JSON formatted API code for our loss sets, we can now head across to the Analyze Re API:
@@ -147,12 +154,6 @@ if upload_type == 'Updating an existing upload':
                 - Click "PUT", which saves the changes
                 
                 The page should refresh, and you should now see the loss set "sinks" you added at the bottom. If you refresh the SAGE webpage, you should now find your new loss sets and the old ones should no longer be there.
-                """)
-    st.header('WARNING!')
-    st.markdown("""
-                When removing a loss set from SAGE, it is imperative that the loss set is unselected from all structures in the analysis profile, and is ungrouped from any groups and any shared limits. If you don't do this, the loss set will disappear as expected, but the premium, expense and losses will still feed into the portfolio level numbers. 
-                
-                If you notice phantom numbers in SAGE that line up with an old loss set, reinstate the loss set in the API using the "sink" we cut out above and deselect it appropriately in SAGE before trying to remove it again.
                 """)
                 
     st.header('2. Adding additional loss sets')
